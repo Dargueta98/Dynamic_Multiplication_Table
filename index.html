@@ -1,0 +1,88 @@
+
+<!--
+File: index.html
+GUI Assignment: Making a dynamic Multiplication table
+Daury Argueta, UMass Lowell Computer Science, daury_argueta@student.uml.edu 
+
+purpose: Had to write javascript, html and css inorder to display a dynamic Multiplication table. Had to
+create a table completely dynamically based on parameters entered in an HTML form. First, 
+we must create a form that accepts the starting and ending numbers for both the horizontal multiplier and vertical 
+multiplicand axes of a multiplication table. Second, we will use the numbers entered into the form to create a 
+multiplication table completely dynamically.
+
+  Copyright (c) 2021 by Daury. All rights reserved. May be freely copied or excerpted for educational 
+purposes with credit to the author.
+
+Updated by Daury on June 16, 2022 at 8:00 PM
+  Youtube resource that help me get an idea on how to get the assignment done.
+  https://www.youtube.com/watch?v=Oql5JQBN0Zs
+  and this docuemnt:
+  src: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daury's Multiplication Table</title>
+    <link rel="stylesheet" href="DAMultipStyle.css" />
+  </head>
+  <body>
+    <h2 class="myTitle">Daurys Dynamic Multiplication Table!</h2>
+    <div id="container">
+      <div>
+        <!--
+        https://stackoverflow.com/questions/3547035/getting-html-form-values
+      -->
+        <form id="userInputs">
+          <label for="xAxisStart">Enter the x Axis Min val:</label>
+          <input
+            type="text"
+            id="xAxisStart"
+            name="xAxisStart"
+            placeholder="Min Row Val..."
+            min="-50"
+          /><br />
+          <label for="xAxisEnd">Enter the x Axis Max val:</label>
+          <input
+            type="text"
+            id="xAxisEnd"
+            name="xAxisEnd"
+            placeholder="Max Row Val..."
+            max="50"
+          /><br />
+          <label for="yAxisStart">Enter the y Axis Min:</label>
+          <input
+            type="text"
+            id="yAxisStart"
+            name="yAxisStart"
+            placeholder="Min Column Val..."
+            min="-50"
+          />
+          <br />
+          <label for="yAxisEnd">Enter the y Axis Max:</label>
+          <input
+            type="text"
+            id="yAxisEnd"
+            name="yAxisEnd"
+            placeholder="Max Column Val..."
+            max="50"
+          />
+          <br /><br />
+        </form>
+        <div class="containerTable">
+          <div id="table">
+            <!--Used https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick as reference for this.-->
+            <button id="generate" type="button" onclick="err()">
+              Generate
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--I will USE THIS SPAN tag inorder to display error messages to the user when ever a wrong input is placed.-->
+      <span id="errorMessage"></span>
+    </div>
+    <script src="DAMultipJS.js"></script>
+  </body>
+</html>
